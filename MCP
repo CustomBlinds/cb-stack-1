@@ -1,0 +1,54 @@
+# Custom Blinds MCP Server
+
+A public Model Context Protocol (MCP) server for 
+shop.customblinds.co.za — South Africa's first 
+AI-transactable blind and shade retailer.
+
+## Endpoint
+
+POST https://shop.customblinds.co.za/mcp
+GET  https://shop.customblinds.co.za/mcp-manifest.json
+
+Protocol: JSON-RPC 2.0
+
+## Available Tools
+
+### Open (no auth required)
+- search_products — filter catalogue by type and colour
+- get_price — live ZAR pricing by product, width, height
+- configure_product — full configuration with colour 
+  validation and pricing
+
+### Authorised (Bearer token required)
+- submit_enquiry — sends enquiry to sales team
+- create_order — creates draft order + Yoco payment link
+
+## Validation
+
+All dimension limits are pulled dynamically from the 
+live pricing engine. Invalid configurations return 
+structured JSON-RPC -32602 errors with field-level 
+detail and suggestions.
+
+## Discovery
+
+llms.txt: https://customblinds.co.za/llms.txt
+Manifest: https://shop.customblinds.co.za/mcp-manifest.json
+
+## Products Supported
+
+Roller blinds, honeycomb blinds, aluminium venetian, 
+aluwood venetian, plaswood venetian, wooden venetian, 
+bamboo venetian, zebra/double roller, duo roller, 
+vertical blinds, outdoor blinds.
+
+Made-to-measure. Delivered nationally across South Africa.
+
+## About
+
+Custom Blinds® is a registered trademark of Saxon 
+Commodities T/A Custom Blinds Shutters & Awnings.
+Founded 2010. Based in Knysna, South Africa.
+
+shop.customblinds.co.za
+customblinds.co.za
